@@ -1,0 +1,24 @@
+table {
+  border-collapse: collapse;
+  border-style: none;
+}
+
+.header {
+    border-collapse: separate;
+  border-style: none;
+
+  border-top-width: 0;
+}
+
+.noBorder {
+  border-style: none;
+}
+
+
+
+th,
+td,
+tr {
+  border: 1px solid #444444;
+}
+/* table {} */
