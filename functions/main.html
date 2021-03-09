@@ -667,6 +667,7 @@
             pen_json = JSON.stringify(this.get_model_info(this.models.length));
             my_pen = JSON.parse(pen_json);
             volume = my_pen.volume * 2.9154489769321;
+            //total_volume 추가됨
             total_volume += volume;
             console.log(my_pen);
             //dims : 사용자에게 보여질 3D모델 정보 스트링 
@@ -681,14 +682,6 @@
             var index = this.parent_element.id.substr(8, 100);
             index = Number(index);
 
-
-            input_models_info.value = JSON.stringify(info_array);
-            console.log(info_array.toString());
-            //drop 이벤트가 발생했다면 이전 모델을 제거
-            if (drop_flag == 1) {
-                this.remove_model(rm_id_array[index]++);
-                drop_flag = 0;
-            }
             var weight = get_weight(volume.toFixed(2));
             var price = get_price(dims_array, weight, volume.toFixed(2));
             model_prices[index] = price;
@@ -702,7 +695,14 @@
                 weight: weight,
                 height: getMinHeight(dims_array)
             };
-
+                        
+            input_models_info.value = JSON.stringify(info_array);
+            console.log(info_array.toString());
+            //drop 이벤트가 발생했다면 이전 모델을 제거
+            if (drop_flag == 1) {
+                this.remove_model(rm_id_array[index]++);
+                drop_flag = 0;
+            }
 
 
 
