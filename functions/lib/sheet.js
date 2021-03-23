@@ -222,8 +222,10 @@ exports.insert_models = function (post_body) {
                                     cells[j + 2].value = post_body[`model${i}`];
                                     console.log(i + "+ 6번 로그");
                                     cells[j + 2].save();
+                                    cells[j + 3].value = model_objects[i].volume;
                                     console.log(i + "+ 7번 로그");
-
+                                    cells[j + 3].save();
+                                    console.loge
 
                                 }
 
